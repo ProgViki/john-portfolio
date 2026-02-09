@@ -1,57 +1,70 @@
 // src/components/Navigation.jsx
 import React, { useState } from 'react';
-import { Terminal, Menu, X } from 'lucide-react';
+import { Code, Menu, X, Home, FolderKanban, Wrench, Mail } from 'lucide-react';
 
-const Navigation = ({ activeSection, darkMode, toggleDarkMode, scrollToSection }) => {
+
+const developerInfo = {
+  name: "John Onye"
+}
+
+const Navigation = ({  darkMode, toggleDarkMode, scrollToSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const navItems = [
+    { id: 'hero', label: 'Home', icon: <Home size={18} /> },
+    { id: 'projects', label: 'Projects', icon: <FolderKanban size={18} /> },
+    { id: 'skills', label: 'Skills', icon: <Wrench size={18} /> },
+    { id: 'learning', label: 'Learning', icon: <Code size={18} /> },
+    { id: 'contact', label: 'Contact', icon: <Mail size={18} /> }
+  ];
 
+ 
   const handleNavClick = (sectionId) => {
     scrollToSection(sectionId);
     setIsMenuOpen(false);
   };
 
-  const navItems = ['home', 'projects', 'skills', 'contact'];
-
   return (
-    <nav className={`fixed w-full z-50 ${darkMode ? 'bg-gray-900/90 backdrop-blur-sm' : 'bg-white/90 backdrop-blur-sm'} border-b ${darkMode ? 'border-gray-800' : 'border-gray-200'}`}>
-      <div className="container mx-auto px-4 py-4">
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${
+      darkMode ? 'bg-gray-900/95 backdrop-blur-md' : 'bg-white/95 backdrop-blur-md'
+    } border-b ${darkMode ? 'border-gray-800' : 'border-gray-200'}`}>
+      <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <Terminal className={`h-8 w-8 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`} />
-            <span className="text-xl font-bold">DevPortfolio</span>
+            <div className={`p-2 rounded-lg ${darkMode ? 'bg-blue-900/30' : 'bg-blue-100'}`}>
+              <Code className={`h-6 w-6 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`} />
+            </div>
+            <span className="text-lg font-bold">{developerInfo.name.split(' ')[0]}</span>
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((section) => (
+          <div className="hidden md:flex items-center space-x-6">
+            {navItems.map((item) => (
               <button
-                key={section}
-                onClick={() => handleNavClick(section)}
-                className={`capitalize font-medium transition-colors ${
-                  activeSection === section 
-                    ? (darkMode ? 'text-blue-400' : 'text-blue-600') 
-                    : (darkMode ? 'text-gray-300 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600')
-                }`}
+                key={item.id}
+                onClick={() => handleNavClick(item.id)}
+                className="flex items-center space-x-1 px-3 py-2 rounded-lg font-medium transition-all hover:scale-105"
               >
-                {section}
+                {item.icon}
+                <span>{item.label}</span>
               </button>
             ))}
             <button 
               onClick={toggleDarkMode}
-              className={`px-4 py-2 rounded-lg font-medium ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'}`}
+              className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                darkMode 
+                  ? 'bg-gray-800 hover:bg-gray-700 text-gray-100' 
+                  : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
+              }`}
             >
-              {darkMode ? 'Light Mode' : 'Dark Mode'}
+              {darkMode ? '☀️ Light' : '🌙 Dark'}
             </button>
           </div>
           
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden"
-            onClick={toggleMenu}
+            className="md:hidden p-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -59,26 +72,33 @@ const Navigation = ({ activeSection, darkMode, toggleDarkMode, scrollToSection }
         
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className={`md:hidden mt-4 pb-4 ${darkMode ? 'bg-gray-800' : 'bg-gray-100'} rounded-lg p-4`}>
-            <div className="flex flex-col space-y-4">
-              {navItems.map((section) => (
+          <div className={`md:hidden mt-4 pb-4 rounded-xl p-4 ${
+            darkMode ? 'bg-gray-800' : 'bg-gray-100'
+          }`}>
+            <div className="flex flex-col space-y-3">
+              {navItems.map((item) => (
                 <button
-                  key={section}
-                  onClick={() => handleNavClick(section)}
-                  className={`capitalize font-medium text-left py-2 px-4 rounded ${
-                    activeSection === section 
-                      ? (darkMode ? 'bg-blue-900/30 text-blue-400' : 'bg-blue-100 text-blue-600') 
-                      : (darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-200')
+                  key={item.id}
+                  onClick={() => handleNavClick(item.id)}
+                  className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-medium transition-all ${
+                    darkMode 
+                      ? 'hover:bg-gray-700' 
+                      : 'hover:bg-gray-200'
                   }`}
                 >
-                  {section}
+                  {item.icon}
+                  <span>{item.label}</span>
                 </button>
               ))}
               <button 
                 onClick={toggleDarkMode}
-                className={`px-4 py-2 rounded-lg font-medium ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-200 hover:bg-gray-300'}`}
+                className={`px-4 py-3 rounded-lg font-medium mt-2 ${
+                  darkMode 
+                    ? 'bg-gray-700 hover:bg-gray-600' 
+                    : 'bg-gray-200 hover:bg-gray-300'
+                }`}
               >
-                {darkMode ? 'Light Mode' : 'Dark Mode'}
+                {darkMode ? '☀️ Switch to Light Mode' : '🌙 Switch to Dark Mode'}
               </button>
             </div>
           </div>
