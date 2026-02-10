@@ -10,7 +10,7 @@ export const developerInfo = {
   tagline: "Seeking Internship and Opportunities",
   bio: "Currently mastering the fundamentals of web development with HTML, CSS, and JavaScript. Passionate about creating clean, accessible websites and eager to apply my skills in a real-world environment. Learning React.js to build modern web applications.",
   status: "Currently pursuing Computer Science degree",
-  resumeUrl: "/john-onyechukwu-resume.pdf"
+  resumeUrl: "/public/JOHNONYE_RESUME.pdf"
 };
 
 export const coreSkills = [
@@ -109,5 +109,7 @@ export const goals = [
   "Contribute to open source projects",
   "Build 10+ real-world projects",
   "Master React ecosystem",
-  "Learn backend basics"
+  "Learn API integration basics and build full-stack apps",
+  "Continue improving coding skills and best practices"
+  
 ];

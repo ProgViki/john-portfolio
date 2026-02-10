@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import SkillsShowcase from './components/SkillsShowcase';
-import Projects from './components/Projects';
+// import Projects from './components/Projects';
 import LearningJourney from './components/LearningJourney';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -60,7 +60,7 @@ function App() {
         scrollToSection={scrollToSection}
       />
       
-      <Projects darkMode={darkMode} />
+      {/* <Projects darkMode={darkMode} /> */}
       
       <SkillsShowcase darkMode={darkMode} />
       

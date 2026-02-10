@@ -4,7 +4,7 @@ import { Code, Menu, X, Home, FolderKanban, Wrench, Mail } from 'lucide-react';
 
 
 const developerInfo = {
-  name: "John Onye"
+  name: "JohnOnye Onyekwere",
 }
 
 const Navigation = ({  darkMode, toggleDarkMode, scrollToSection }) => {
