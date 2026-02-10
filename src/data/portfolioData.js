@@ -109,5 +109,7 @@ export const goals = [
   "Contribute to open source projects",
   "Build 10+ real-world projects",
   "Master React ecosystem",
-  "Learn backend basics"
+  "Learn API integration basics and build full-stack apps",
+  "Continue improving coding skills and best practices"
+  
 ];
