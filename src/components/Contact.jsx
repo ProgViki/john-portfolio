@@ -193,6 +193,7 @@ const Contact = ({ darkMode }) => {
               <div className="space-y-4">
                 <a 
                   href={developerInfo.resumeUrl}
+                  download="john_onye_resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`block w-full py-3 px-4 rounded-lg font-medium text-center transition-all ${

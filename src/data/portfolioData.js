@@ -10,7 +10,7 @@ export const developerInfo = {
   tagline: "Seeking Internship and Opportunities",
   bio: "Currently mastering the fundamentals of web development with HTML, CSS, and JavaScript. Passionate about creating clean, accessible websites and eager to apply my skills in a real-world environment. Learning React.js to build modern web applications.",
   status: "Currently pursuing Computer Science degree",
-  resumeUrl: "/public/JOHNONYE_RESUME.pdf"
+  resumeUrl: "/public/john_onye_resume.pdf"
 };
 
 export const coreSkills = [
