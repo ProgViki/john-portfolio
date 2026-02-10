@@ -1,7 +1,7 @@
 // src/data/portfolioData.js
 
 export const developerInfo = {
-  name: "John Onyechukwu",
+  name: "John Onyekwere",
   title: "Aspiring Frontend Developer",
   location: "Lagos, Nigeria",
   email: "johnndubuisi140@gmail.com",

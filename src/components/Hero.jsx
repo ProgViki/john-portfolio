@@ -47,7 +47,7 @@ const Hero = ({ darkMode, scrollToSection }) => {
               </button>
             </div>
             
-            <div className="flex flex-wrap items-center gap-6">
+            {/* <div className="flex flex-wrap items-center gap-6">
               <div className="flex items-center">
                 <GraduationCap size={20} className="text-blue-500 mr-2" />
                 <span className="font-medium">{developerInfo.status}</span>
@@ -56,7 +56,7 @@ const Hero = ({ darkMode, scrollToSection }) => {
                 <MapPin size={20} className="text-blue-500 mr-2" />
                 <span className="font-medium">{developerInfo.location}</span>
               </div>
-            </div>
+            </div> */}
             
             <div className="flex space-x-4 mt-8">
               <a href={developerInfo.github} target="_blank" rel="noopener noreferrer" 
