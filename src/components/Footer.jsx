@@ -26,7 +26,8 @@ const Footer = ({ darkMode }) => {
           </div>
           
           <div className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-            &copy; {currentYear} John Onye. Built with React & Tailwind CSS.
+            &copy; {currentYear} John Onye. 
+            {/* Built with React & CSS. */}
           </div>
         </div>
         
