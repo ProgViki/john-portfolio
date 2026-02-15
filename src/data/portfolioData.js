@@ -98,7 +98,7 @@ export const projects = [
 export const learningPath = [
   { skill: "JavaScript ES6+", status: "In Progress", progress: 80 },
   { skill: "React Fundamentals", status: "In Progress", progress: 40 },
-  { skill: "Tailwind CSS", status: "In Progress", progress: 70 },
+  { skill: "Advanced CSS", status: "In Progress", progress: 70 },
   { skill: "Git Advanced", status: "Next", progress: 20 },
   { skill: "TypeScript", status: "Planned", progress: 10 },
   { skill: "Node.js Basics", status: "Planned", progress: 5 }

@@ -9,7 +9,7 @@
         },
         {
           "key": "Content-Disposition",
-          "value": "inline; filename=\"public/john_onye_resume.pdf\""
+          "value": "inline; filename=\"john_onye_resume.pdf\""
         }
       ]
     }
